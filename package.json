@@ -1,0 +1,31 @@
+{
+  "name": "cards",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "dev": "vue-cli-service serve --v true",
+    "build": "vue-cli-service build",
+    "alpha": "vue-cli-service build --v true"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "core-js": "^3.6.5",
+    "vant": "^2.12.4",
+    "vue": "^2.6.11"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "minimist": "^1.2.5",
+    "sass": "^1.32.4",
+    "sass-loader": "^10.1.1",
+    "vconsole-webpack-plugin": "^1.5.2",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

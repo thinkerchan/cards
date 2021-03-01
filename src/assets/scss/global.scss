@@ -1,0 +1,88 @@
+*{
+  margin:0;
+  padding:0;
+}
+@mixin gSetLine($line: 1, $lh: 1.5){
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+  line-height: $lh;
+  word-break: break-word;
+}
+
+@mixin gPlaceholder($size: 1rem){
+  display: block;
+  // background: url("~@/views/images/common/placeholder.png") no-repeat center center;
+  background-size: $size;
+  background-color: #F0F0F0;
+  object-fit: cover;
+  &[src^='http']{
+    background-image: none;
+  }
+}
+
+@mixin gSetBg($url,$size:100%) {
+  display: block;
+  background: url($url) no-repeat center center;
+  background-size: $size;
+}
+
+html,body,#app{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body{
+  background-color: #ffe9d4;
+}
+img{
+  display: block;
+}
+
+.poa{
+  position: absolute;
+}
+.m0a{
+  margin: 0 auto;
+}
+.tac{
+  text-align: center;
+}
+.bgn{
+  background: none;
+}
+
+@keyframes bigSmall{
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@mixin gAniBigSmall($time:1s) {
+  animation: $time linear 0s infinite bigSmall;
+}
+
+@keyframes fadeIn{
+  0% {
+    transform: translateX(7.5rem);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.fadeIn{
+  animation: .4s ease-out 0s forwards fadeIn;
+}
