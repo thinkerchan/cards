@@ -52,7 +52,7 @@ module.exports = {
   publicPath: './', // 官方建议不要再pages配置下使用这个参数
   lintOnSave: false,
   pages: {
-    index: createPage('index', '全国方言挑战赛!'),
-    jumper: createPage('jumper', '全国方言挑战赛!'),
+    index: createPage('index', 'paege index'),
+    jumper: createPage('jumper', 'page jumper'),
   }
 }

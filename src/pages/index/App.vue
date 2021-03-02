@@ -388,6 +388,9 @@
           Toast(res.errMsg);
         });
       },
+      randomSort(){
+        return new Array();
+      },
       randomSort(arr) {
         let len = arr.length;
         for (let i = 0; i < len - 1; i++) {
