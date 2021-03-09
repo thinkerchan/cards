@@ -23,7 +23,6 @@
   import Toast from 'vant/lib/toast';
   import 'vant/lib/toast/style';
 
-  import qaData from './q';
   export default {
     name:'pageAuth',
     data(){
