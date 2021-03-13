@@ -4,8 +4,9 @@
       <div class="loading-txt">{{loadingTxt}}%</div>
       <div class="logo"></div>
     </div>
-    <div class="page page-1">
-
+    <div class="page page-1" v-if="showPage1">
+      <img src="../images/bg-1.jpg" class="bg-img">
+      <div class="btn-page-index"></div>
     </div>
   </div>
 </template>
@@ -44,6 +45,7 @@
         rawTime:0,
         isWeixin: navigator.userAgent.toLowerCase().indexOf('micromessenger')>-1,
 
+        showPage1:false,
       }
     },
     components:{
@@ -52,7 +54,6 @@
       vanField
     },
     created(){
-      return;
 
       let testMode = location.href.indexOf('testMode=true')>-1;
       if (testMode) {
@@ -63,8 +64,8 @@
         this.cssText = `transform:scale(${this.pageScale});transform-origin: 50% 0 0 `;
       }
 
-      this.checkAuth()
-      this.setShare()
+      // this.checkAuth()
+      // this.setShare()
       this.preload(()=>{
         this.loading  = false
         this.showPage1 = true
@@ -74,8 +75,6 @@
       preload(cb){
         let list=[
           {src:require("../images/bg-1.jpg")},
-          {src:require("../images/bg-2.jpg")},
-          {src:require("../images/bg-3.jpg")},
         ]
 
         const loader = new createjs.LoadQueue(false);
@@ -423,6 +422,41 @@
 <style lang="scss">
   @import '@/assets/scss/global.scss';
   .page-game{
-
+    height: 100%;
+    width: 100%;
+    .page{
+      width:100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      .bg-img{
+        width: 7.5rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+      }
+      .logo{
+        width: 2.93rem;
+        height: .66rem;
+        // @include gSetBg('../images/logo.png');
+        margin-top:.4rem;
+        margin-left: .4rem;
+      }
+    }
+    .page-0{
+      color:#fff;
+      .loading-txt{
+        text-align: center;
+        padding-top: 2rem;
+      }
+    }
+    .page-1{
+      .btn-page-index{
+        
+      }
+    }
   }
 </style>
